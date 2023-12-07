@@ -17,7 +17,10 @@ def score(hand):
     elif 2 in counts:
         return 1
     return 0 #high card
-
+"""
+works because if there is more than one J in a hand, you will always replace those J's to the same
+card because that will always give the strongest hand
+"""
 def replacements(hand):
     print("hand:", hand)
     res = [hand]
@@ -30,7 +33,6 @@ def replacements(hand):
         return res
 
 def classify(hand):
-    print("replacements(hand):", replacements(hand))
     return max(map(score, replacements(hand)))
 
 def strength(hand):
